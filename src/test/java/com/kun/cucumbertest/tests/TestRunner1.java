@@ -1,5 +1,15 @@
 package com.kun.cucumbertest.tests;
 
+/**
+ * ClassName: TestRunner1
+ * Package: com.kun.cucumbertest.tests
+ * Description:
+ *
+ * @Author KunJiang
+ * @Create 11/27/24 9:12 PM
+ * @Version 1.0
+ */
+
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -7,15 +17,14 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features/LoginValidate.feature",
-        //,"src/test/resources/features/GoogleSearch.feature" },  // Path to feature files
-        glue = "com.kun.cucumbertest.steps.LoginValidateSteps",       // Path to step definition classes
+        glue = "com.kun.cucumbertest.steps",       // Path to step definition classes
         plugin = {
                 "pretty",                            // Console output
                 "html:target/cucumber-reports.html",      // HTML report
                 "json:target/cucumber.json",  // JSON report
                 "junit:target/cucumber.xml" // XML report
         }
-        //LoginValidate.feature
 )
-public class TestRunner {
+public class TestRunner1 {
 }
+

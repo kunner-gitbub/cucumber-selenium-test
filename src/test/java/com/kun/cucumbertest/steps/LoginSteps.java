@@ -18,17 +18,20 @@ public class LoginSteps {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get("https://google.com");
+        System.out.println(driver.getTitle());
     }
 
     @When("I enter valid credentials")
     public void enterCredentials() {
         // Use Selenium to interact with the page
         driver.findElement(By.name("q")).sendKeys("testUser");
+        System.out.println("driver.getTitle() = " + driver.getTitle());
     }
 
     @Then("I should be logged in successfully")
     public void verifyLogin() {
         String pageTitle = driver.getTitle();
+        System.out.println("pageTitle = " + pageTitle);
         driver.quit();
     }
 }
